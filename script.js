@@ -4,15 +4,32 @@ Visando atender esse quesito, você foi escolhido para nos ajudar nessa soluçã
 Observação:  Ignorar letra “a” com acentuação.*/
 
 let palavraChave = "Ana Maria da Silva Coração";
-let letras = 0;
 
+//forma simples
+let letrasA = 0;
 for (let i = 0; i < palavraChave.length; i++) {
   if (palavraChave[i] == "a") {
-    letras = letras + 1;
+    letrasA = letrasA + 1;
   }
 }
 
-console.log(`Quantidade de letras "a" minúscula: ${letras}`);
+//com função
+function contadorLetraA(frase) {
+  let letras = 0;
+  for (let i = 0; i < frase.length; i++) {
+    if (frase[i] == "a") {
+      letras = letras + 1;
+    }
+  }
+
+  return letras;
+}
+
+console.log(
+  `Quantidade de letras "a" minúscula: ${contadorLetraA(palavraChave)}`
+); //com função
+
+console.log(`Quantidade de letras "a" minúscula: ${letrasA}`); //forma simpes
 
 /*2) A ModalGR possui um sistema em desenvolvimento que recebe dois vetores de 20 números inteiros. A partir desses valores armazenar em um terceiro vetor números que se repetem, por exemplo:
 Entradas: a = [1, 2, 3, ... ] e b = [4, 2, 4, ... ] Saída: [2]
