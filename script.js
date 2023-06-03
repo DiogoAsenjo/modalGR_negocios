@@ -37,6 +37,32 @@ Visando atender esse quesito, você foi escolhido para nos ajudar nessa soluçã
 Observações:  Valores repetidos no mesmo vetor não devem ser armazenados no vetor final;  Caso o vetor ”a” contenha dois ou mais números repetidos e no vetor “b” contenha uma ou mais ocorrências desse valor, deve-se armazenar no vetor
 final apenas uma ocorrência dessa situação.*/
 
+let listaA = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
+let listaB = [
+  2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 20, 28, 30, 20, 34, 36, 38, 20,
+];
+let listaC = [];
+let achei = false;
+
+for (let i = 0; i < listaA.length; i++) {
+  for (let j = 0; j < listaB.length; j++)
+    if (listaA[i] === listaB[j]) {
+      achei = false;
+      for (let k = 0; k < listaC.length; k++) {
+        if (listaA[i] === listaC[k]) {
+          achei = true;
+          break;
+        }
+      }
+      if (achei == false) {
+        listaC.push(listaA[i]);
+      }
+    }
+}
+
+console.log(listaC);
 /*3) A ModalGR possui um sistema em desenvolvimento e numa parte específica será necessário separar dados numéricos de strings, a partir de uma variável do tipo string contendo diversos valores delimitados por vírgula, como por exemplo:
 Ana, 89,78, Maria, 45.8, 27, 56, Paula Pereira, 978, A, VIVA, 35, 125, 8999, ...Visando atender esse quesito, você foi escolhido para nos ajudar nessa solução! Após a separação dos dados exibi-los em tela.
 Observação:  O tamanho da string com os dados base é variável, ou seja, não possui um limite fixo.*/
