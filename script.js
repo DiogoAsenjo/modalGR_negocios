@@ -44,22 +44,26 @@ let listaB = [
   2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 20, 28, 30, 20, 34, 36, 38, 20,
 ];
 let listaC = [];
-let achei = false;
+
+function verificandoDuplicidade(num) {
+  let duplicidade = false;
+  for (let i = 0; i < listaC.length; i++) {
+    if (num == listaC[i]) {
+      duplicidade = true;
+      break;
+    }
+  }
+  return duplicidade;
+}
 
 for (let i = 0; i < listaA.length; i++) {
-  for (let j = 0; j < listaB.length; j++)
+  for (let j = 0; j < listaB.length; j++) {
     if (listaA[i] === listaB[j]) {
-      achei = false;
-      for (let k = 0; k < listaC.length; k++) {
-        if (listaA[i] === listaC[k]) {
-          achei = true;
-          break;
-        }
-      }
-      if (achei == false) {
+      if (!verificandoDuplicidade(listaA[i])) {
         listaC.push(listaA[i]);
       }
     }
+  }
 }
 
 console.log(listaC);
