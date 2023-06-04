@@ -72,29 +72,19 @@ console.log(listaC);
 Ana, 89,78, Maria, 45.8, 27, 56, Paula Pereira, 978, A, VIVA, 35, 125, 8999, ...Visando atender esse quesito, você foi escolhido para nos ajudar nessa solução! Após a separação dos dados exibi-los em tela.
 Observação:  O tamanho da string com os dados base é variável, ou seja, não possui um limite fixo.*/
 
-let listaDeDados = [
-  "Ana",
-  89,
-  78,
-  "Maria",
-  45.8,
-  27,
-  56,
-  "Paula Pereira",
-  978,
-  "A",
-  "VIVA",
-  35,
-  125,
-  8999,
-];
+let stringGigante =
+  "Ana, 89,78, Maria, 45.8, 27, 56, Paula Pereira, 978, A, VIVA, 35, 125, 8999";
 let listaNums = [];
 let listaString = [];
 
+let listaDeDados = stringGigante.split(",");
+
 for (let i = 0; i < listaDeDados.length; i++) {
+  if (parseFloat(listaDeDados[i]))
+    listaDeDados[i] = parseFloat(listaDeDados[i]);
   if (typeof listaDeDados[i] === "number") {
     listaNums.push(listaDeDados[i]);
-  } else {
+  } else if (typeof listaDeDados[i] === "string") {
     listaString.push(listaDeDados[i]);
   }
 }
