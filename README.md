@@ -14,3 +14,6 @@ Tentei quebrar em frações o que era possível.
 
 ## Exercício 03
 Primeiro tive que separar a string um um array e depois transformar os dados números que eram do tipo string em tipo número, para ai sim, conseguir fazer a separação nas listas de string e números. 
+
+## Obs
+Para entender a linha de raciocínio, fiz os commits conforme ia fazendo os exercícios, assim dá pra acompanhar o que eu ia pensando enquanto fazia. 
